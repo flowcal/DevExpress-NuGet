@@ -11,7 +11,6 @@ Foreach-Object{
 
     if ($LASTEXITCODE -ne 0)
     {
-        Write-Error "Error generating nupkg for '$($_.Name)'"
-        break
+        Write-Error "Error generating nupkg for '$($_.Name)'" -ErrorAction Continue
     }
 }
