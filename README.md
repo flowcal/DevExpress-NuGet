@@ -67,6 +67,8 @@ For example, if the assembly `DevExpress.Xpf.Ribbon.v15.1.dll` directly referenc
 
 ## How to generate the NuGet packages
 
+Before generating the packages, you must copy the installed DevExpress assemblies as described in [Folder Structure](#folder-structure) above.
+
 To generate all NuGet packages, just run the batch file `src\nuget-pack.cmd`, or if you prefer to manually generate specific packages, just use the `nuget.exe` command line utility. For example:
 
     nuget.exe pack ".\src\nuspec\Unofficial.DevExpress.Data.nuspec" -BasePath ".\src" -OutputDirectory ".\src\nupkg"
