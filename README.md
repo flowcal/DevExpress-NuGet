@@ -22,32 +22,32 @@ If you too think that [DevExpress](http://www.devexpress.com) should provide us 
 
 I've created one NuGet package specification for every single assembly included in the DevExpress .NET controls, which in turn can be used to generate a NuGet package.
 
-For example, the file `nuspec\Unofficial.DevExpress.Xpf.Ribbon.nuspec` is the corresponding NuGet specification for the assembly `DevExpress.Xpf.Ribbon.v15.1.dll`.
+For example, the file `nuspec\Unofficial.DevExpress.Xpf.Ribbon.nuspec` is the corresponding NuGet specification for the assembly `DevExpress.Xpf.Ribbon.v16.2.dll`.
 
 
 ### Dependencies between NuGet packages
 
 The dependencies between NuGet packages are created based on direct references to other DevExpress assemblies.
 
-For example, if the assembly `DevExpress.Xpf.Ribbon.v15.1.dll` directly references `DevExpress.Data.v15.1.dll`, `DevExpress.Mvvm.v15.1.dll` and `DevExpress.Xpf.Core.v15.1.dll`, the NuGet specification will declare a dependency to each of the three NuGet packages corresponding to these assemblies:
+For example, if the assembly `DevExpress.Xpf.Ribbon.v16.2.dll` directly references `DevExpress.Data.v16.2.dll`, `DevExpress.Mvvm.v16.2.dll` and `DevExpress.Xpf.Core.v16.2.dll`, the NuGet specification will declare a dependency to each of the three NuGet packages corresponding to these assemblies:
 
     <?xml version="1.0"?>
     <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
       <metadata>
         <id>Unofficial.DevExpress.Xpf.Ribbon</id>
-        <version>15.2.4.0</version>
+        <version>16.2.5.0</version>
         <!-- ... (omitted for brevity) -->
         <dependencies>
           <group targetFramework=".NETFramework4.0">
-            <dependency id="Unofficial.DevExpress.Xpf.Core" version="15.2.4.0" />
-            <dependency id="Unofficial.DevExpress.Data" version="15.2.4.0" />
-            <dependency id="Unofficial.DevExpress.Mvvm" version="15.2.4.0" />
+            <dependency id="Unofficial.DevExpress.Xpf.Core" version="16.2.5.0" />
+            <dependency id="Unofficial.DevExpress.Data" version="16.2.5.0" />
+            <dependency id="Unofficial.DevExpress.Mvvm" version="16.2.5.0" />
           </group>
        </dependencies>
       </metadata>
       <files>
-        <file src="lib\DevExpress.Xpf.Ribbon.v15.1.dll" target="lib\net40" />
-        <file src="lib\DevExpress.Xpf.Ribbon.v15.1.xml" target="lib\net40" />
+        <file src="lib\DevExpress.Xpf.Ribbon.v16.2.dll" target="lib\net40" />
+        <file src="lib\DevExpress.Xpf.Ribbon.v16.2.xml" target="lib\net40" />
       </files>
     </package>
 
@@ -56,7 +56,7 @@ For example, if the assembly `DevExpress.Xpf.Ribbon.v15.1.dll` directly referenc
 
 - **src**
   - **lib**
-      - This is where you put the DevExpress assemblies before you generate the NuGet packages. You will typically copy the contents of the folder `C:\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework` and paste it here, including sub-folders;
+      - This is where you put the DevExpress assemblies before you generate the NuGet packages. You will typically copy the contents of the folder `C:\Program Files (x86)\DevExpress 16.2\Components\Bin\Framework` and paste it here, including sub-folders;
   - **nupkg**
       - This is the output folder where the NuGet packages will be generated; 
   - **nuspec**
@@ -67,7 +67,7 @@ For example, if the assembly `DevExpress.Xpf.Ribbon.v15.1.dll` directly referenc
 
 ## How to generate the NuGet packages
 
-To generate all NuGet packages, just run the batch file `src\nuget-pack.cmd`, or if you prefer to manually generate specific packages, just use the `nuget.exe` command line utility. For example:
+To generate all NuGet packages, just run the powershell file `src\nuget-pack.ps1`, or if you prefer to manually generate specific packages, just use the `nuget.exe` command line utility. For example:
 
     nuget.exe pack ".\src\nuspec\Unofficial.DevExpress.Data.nuspec" -BasePath ".\src" -OutputDirectory ".\src\nupkg"
 
@@ -86,6 +86,48 @@ Please [report any issues](https://github.com/CaioProiete/DevExpress-NuGet/issue
 
 
 ## Release History
+ * **v16.2.5.0** - 2017-03-06
+   - Contains NuGet specs for the DevExpress Components 16.2.5 released on February 28, 2017
+
+ * **v16.2.4.0** - 2017-03-05
+   - Contains NuGet specs for the DevExpress Components 16.2.4 released on January 18, 2017
+
+ * **v16.2.3.0** - 2017-01-11
+   - Contains NuGet specs for the DevExpress Components 16.2.3 released on December 14, 2016
+
+ * **v16.1.8.0** - 2016-11-19
+   - Contains NuGet specs for the DevExpress Components 16.1.8 released on November 16, 2016
+
+ * **v16.1.7.0** - 2016-10-13
+   - Contains NuGet specs for the DevExpress Components 16.1.7 released on October 13, 2016
+
+ * **v16.1.6.0** - 2016-09-16
+   - Contains NuGet specs for the DevExpress Components 16.1.6 released on September 08, 2016
+
+ * **v16.1.5.0** - 2016-08-07
+   - Contains NuGet specs for the DevExpress Components 16.1.5 released on August 02, 2016
+
+ * **v16.1.4.0** - 2016-07-02
+   - Contains NuGet specs for the DevExpress Components 16.1.4 released on June 22, 2016
+
+ * **v15.2.11.0** - 2016-07-02
+   - Contains NuGet specs for the DevExpress Components 15.2.11 released on June 22, 2016
+
+ * **v15.2.10.0** - 2016-04-26
+   - Contains NuGet specs for the DevExpress Components 15.2.10 released on June 01, 2016
+
+ * **v15.2.9.0** - 2016-04-26
+   - Contains NuGet specs for the DevExpress Components 15.2.9 released on April 07, 2016
+
+ * **v15.2.7.0** - 2016-03-07
+   - Contains NuGet specs for the DevExpress Components 15.2.7 released on March 07, 2016
+
+ * **v15.2.6.0** - 2016-03-03
+   - Contains NuGet specs for the DevExpress Components 15.2.6 released on March 02, 2016
+
+ * **v15.2.5.0** - 2016-02-20
+   - Contains NuGet specs for the DevExpress Components 15.2.5 released on February 01, 2016
+
  * **v15.2.4.0** - 2015-12-09
    - Contains NuGet specs for the DevExpress Components 15.2.4 released on December 09, 2015
 
@@ -135,7 +177,7 @@ Please [report any issues](https://github.com/CaioProiete/DevExpress-NuGet/issue
    - Contains NuGet specs for the DevExpress Components 14.1.7 released on September 24, 2014
 
 ## License   
-Copyright 2014-2015 Caio Proiete
+Copyright 2014-2017 Caio Proiete
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -151,4 +193,4 @@ limitations under the License.
 
 ---
 
-The DevExpress components and trademark are Copyright (C) 2000-2015 Developer Express Inc. and their end-user license agreement is available at [https://www.devexpress.com/Support/EULAs/NetComponents.xml](https://www.devexpress.com/Support/EULAs/NetComponents.xml).
+The DevExpress components and trademark are Copyright (C) 2000-2017 Developer Express Inc. and their end-user license agreement is available at [https://www.devexpress.com/Support/EULAs/NetComponents.xml](https://www.devexpress.com/Support/EULAs/NetComponents.xml).
